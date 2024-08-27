@@ -7,7 +7,7 @@ int search(string pattern, string text) {
 
     int patternPointer, textPointer;
 
-    for (textPointer = 0, patternPointer = 0; textPointer < n && patternPointer < m; textPointer++) {
+    for (textPointer = 0, patternPointer = 0; textPointer < textSize && patternPointer < patternSize; textPointer++) {
         if (pattern[patternPointer] == text[textPointer]) j++;
         else {
             textPointer -= patternPointer;
