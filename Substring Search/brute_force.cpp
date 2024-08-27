@@ -2,20 +2,20 @@
 using namespace std;
 
 int search(string pattern, string text) {
-    int n = text.length();
-    int m = pattern.length();
+    int textSize = text.length();
+    int patternSize = pattern.length();
 
-    int i, j;
+    int patternPointer, textPointer;
 
-    for (i = 0, j = 0; i < n && j < m; i++) {
-        if (pattern[j] == text[i]) j++;
+    for (textPointer = 0, patternPointer = 0; textPointer < n && patternPointer < m; textPointer++) {
+        if (pattern[patternPointer] == text[textPointer]) j++;
         else {
-            i -= j;
-            j = 0;
+            textPointer -= patternPointer;
+            patternPointer = 0;
         }
     }
-    if (j == m) return i - m;
-    return n;
+    if (patternPointer == patternSize) return textPointer - patternSize;
+    return textSize;
 }
 
 int main () {
