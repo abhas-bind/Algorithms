@@ -21,7 +21,7 @@ public:
     }
 
     size_t findIn(string& text) const {
-        if (text.length() == 0) return std::string::npos;
+        if (text.length() == 0) return 0;
         int patternIndex = 0;
         
         for (int i = 0; i < text.length(); i++) {
@@ -32,7 +32,7 @@ public:
             if (j == pattern.length()) return i - pattern.length() + 1;
         }
 
-        return std::string::npos;
+        return text.length();
     }
 
 
